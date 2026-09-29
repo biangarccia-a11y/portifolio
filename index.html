@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-mode="criativo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bia Nogueira — Comunicação, Conteúdo, UGC e Creators</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#F3F0F8; --fg:#20183A; --muted:#5B5478; --line:#D9D3E8; --card:#FFFFFF;
+  --accent:#C71F76; --r:999px; --rp:18px;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#17112B;--fg:#F1EDFA;--muted:#B4ADD0;--line:#3A3160;--card:#221A3E}
+}
+:root[data-theme="dark"]{--bg:#17112B;--fg:#F1EDFA;--muted:#B4ADD0;--line:#3A3160;--card:#221A3E}
+:root[data-mode="corporativo"]{--accent:#3853C4;--r:4px;--rp:4px}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 1.0625rem/1.65 var(--body);transition:background .3s}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1.25rem,5vw,3rem)}
+
+/* hero */
+.hero{padding:clamp(3rem,10vw,7rem) 0 clamp(2.5rem,6vw,4rem)}
+.hero h1{font:800 clamp(3.4rem,15vw,10.5rem)/.88 var(--display);letter-spacing:-.035em;margin:0 0 1.5rem;color:var(--accent);transition:color .3s;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span{display:block}
+.roles{font:600 clamp(1.15rem,3vw,1.6rem)/1.3 var(--display);margin:0 0 .35rem}
+.sub{color:var(--muted);margin:0 0 2.25rem;max-width:34rem}
+.switch{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1rem}
+.switch p{margin:0;color:var(--muted);font-size:.95rem}
+.seg{display:inline-flex;border:1.5px solid var(--fg);border-radius:var(--r);padding:3px;gap:3px;transition:border-radius .3s}
+.seg button{font:600 .95rem var(--body);border:0;background:transparent;color:var(--fg);padding:.5rem 1.1rem;border-radius:var(--r);cursor:pointer;transition:background .25s,color .25s}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.mode-note{margin:.9rem 0 0;color:var(--muted);font-size:.95rem;min-height:1.6em}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* sections */
+.row{display:grid;gap:1rem 3rem;padding:clamp(2.25rem,6vw,3.75rem) 0;border-top:1.5px solid var(--line)}
+@media(min-width:800px){.row{grid-template-columns:13rem 1fr}}
+.row>h2{font:600 1.35rem/1.2 var(--display);margin:0;color:var(--accent);transition:color .3s}
+.row p{margin:0 0 1rem;max-width:40rem}
+.lead{font:600 clamp(1.3rem,2.6vw,1.75rem)/1.35 var(--display);max-width:36rem}
+.muted{color:var(--muted)}
+
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:1rem 0 0;list-style:none}
+.tags li{padding:.3rem .85rem;font-size:.92rem;border-radius:var(--r);background:color-mix(in srgb,var(--accent) 13%,var(--bg));border:1px solid color-mix(in srgb,var(--accent) 30%,var(--bg));transition:border-radius .3s}
+
+.cols{display:grid;gap:2.25rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.cols h3{font:600 1.25rem/1.25 var(--display);margin:0 0 .5rem}
+.cols p{color:var(--muted);font-size:1rem}
+.cols .tags{margin-top:.5rem}
+
+.list{margin:0;padding:0;list-style:none;display:grid;gap:.4rem;max-width:40rem}
+.list li{padding-left:1.3rem;position:relative}
+.list li::before{content:"";position:absolute;left:0;top:.7em;width:.55rem;height:.55rem;background:var(--accent);border-radius:var(--r);transition:border-radius .3s}
+
+.quote{font:800 clamp(1.8rem,5vw,3.4rem)/1.08 var(--display);letter-spacing:-.02em;margin:0 0 1.5rem;max-width:44rem}
+.contact{background:var(--card);border:1.5px solid var(--line);border-radius:6px;padding:1.5rem;display:grid;gap:.4rem;max-width:26rem}
+.contact strong{font:600 1.2rem var(--display)}
+.contact span{color:var(--muted)}
+.proj{padding:0 0 1.75rem;margin:0 0 1.75rem;border-bottom:1px solid var(--line);max-width:42rem}
+.proj:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.proj h3{font:600 1.35rem/1.25 var(--display);margin:0 0 .15rem}
+.proj .kind{color:var(--accent);font-weight:600;margin:0 0 .75rem;transition:color .3s}
+.proj p{max-width:none}
+.contact a{text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
+figure{margin:0}
+.ph{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--rp);background:var(--line);transition:border-radius .3s}
+figcaption{margin-top:.55rem;font-size:.92rem;color:var(--muted);line-height:1.4}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:22rem;margin-top:1.75rem}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem 1rem}
+@media(min-width:800px){.gal{grid-template-columns:repeat(4,1fr)}}
+.proj figure{max-width:11rem;margin-top:1.25rem}
+footer{padding:2.5rem 0 3rem;color:var(--muted);border-top:1.5px solid var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <h1><span>Bia</span><span>Nogueira</span></h1>
+  <p class="roles">Comunicação, conteúdo, UGC, creators e experiências</p>
+  <p class="sub">Portfólio profissional · Vitória e Vila Velha, ES</p>
+  <div class="switch">
+    <p>Veja meu portfólio no modo:</p>
+    <div class="seg" role="group" aria-label="Modo do portfólio">
+      <button type="button" data-set="corporativo" aria-pressed="false">Corporativo</button>
+      <button type="button" data-set="criativo" aria-pressed="true">Criativo</button>
+    </div>
+  </div>
+  <p class="mode-note" id="note" aria-live="polite"></p>
+</div></header>
+
+<main class="wrap">
+  <section class="row" id="sobre">
+    <h2>Sobre mim</h2>
+    <div>
+      <p class="lead">Sou Bia Nogueira, tenho 27 anos, criadora de conteúdo e profissional de comunicação.</p>
+      <p>Trabalho entre estratégia e execução: planejo a presença digital de marcas, produzo conteúdo para redes sociais e organizo experiências que aproximam marcas, creators e público.</p>
+      <p>Minha trajetória reúne social media, eventos, gestão de influenciadores e vivência corporativa como assistente fiscal. Sou cofundadora da Lube Club, comunidade e projeto de ativações com criadoras no Espírito Santo, e curso Publicidade, Propaganda e Mídias Digitais. Essa combinação me ajuda a cuidar tanto da ideia quanto da organização necessária para colocá-la na rua.</p>
+    </div>
+  </section>
+
+  <section class="row" id="frentes">
+    <h2>Frentes de atuação</h2>
+    <div class="cols">
+      <div>
+        <h3>Estratégia e social media</h3>
+        <p>Posicionamento, planejamento editorial, roteiros, legendas, reels, stories e cobertura em tempo real.</p>
+      </div>
+      <div>
+        <h3>UGC e criação de conteúdo</h3>
+        <p>Vídeos de rotina, lifestyle, moda, beleza, viagens e experiências de marca em linguagem natural.</p>
+      </div>
+      <div>
+        <h3>Creators e comunidade</h3>
+        <p>Seleção, briefing, relacionamento, acompanhamento de entregas e organização de ações com criadoras.</p>
+      </div>
+      <div>
+        <h3>Eventos e ativações</h3>
+        <p>Conceito, cronograma, parceiros, produção de conteúdo e comunicação antes, durante e depois da experiência.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="row" id="projetos">
+    <h2>Projetos em destaque</h2>
+    <div>
+      <article class="proj">
+        <h3>Lube Club</h3>
+        <p class="kind">Comunidade e ativações</p>
+        <p><strong>Meu papel:</strong> cofundadora; conexão entre marcas, eventos e criadoras; seleção e coordenação de participantes.</p>
+        <p>Criei com Luiza uma comunidade de criadoras voltada a experiências, presença e colaboração. Em setembro de 2026, o grupo reunia 29 participantes e tinha outras 20 interessadas em entrar. A atuação inclui ações pré-evento, convites, alinhamento com parceiras e produção de conteúdo.</p>
+        <p><strong>Entregas:</strong> curadoria de creators, comunicação com a comunidade, organização de experiências e articulação com marcas.</p>
+      </article>
+      <article class="proj">
+        <h3>De Levi Run</h3>
+        <p class="kind">Lançamento de coleção</p>
+        <p><strong>Meu papel:</strong> planejamento e execução da ação pela Lube Club, com coordenação de criadoras e conteúdo.</p>
+        <p>Experiência de corrida na orla de Itaparica para apresentar a nova coleção da De Levi. A ação reuniu convidadas em um percurso de aproximadamente 3 km, com produção de fotos e vídeos, momentos de convivência e apoio de EBC, The Bank, A Oficina e Green Station.</p>
+        <p><strong>Entregas:</strong> briefing, cronograma, checklist de captação, organização de participantes, fashion film, registros da ação e aftermovie.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="row" id="marcas">
+    <h2>Comunicação para marcas e eventos</h2>
+    <div>
+      <article class="proj">
+        <h3>Base Eventos</h3>
+        <p class="kind">Comunicação e direção criativa</p>
+        <p><strong>Meu papel:</strong> direção criativa e marketing para projetos e eventos.</p>
+        <p>Atuação na comunicação de festas e experiências culturais, transformando programação, artistas e atmosfera dos eventos em conteúdos para redes sociais.</p>
+        <p><strong>Entregas:</strong> planejamento de publicações, textos, convites, campanhas orgânicas, cobertura e conteúdos pós-evento.</p>
+      </article>
+      <article class="proj">
+        <h3>LevBox</h3>
+        <p class="kind">Conteúdo recorrente</p>
+        <p><strong>Meu papel:</strong> social media e criação de conteúdo.</p>
+        <p>Conteúdo que leva os produtos para situações reais de rotina, com vídeos de bastidores, qualidade, variedade, praticidade e uma série sobre a história e os diferenciais da marca.</p>
+        <p><strong>Entregas:</strong> roteiros, reels, legendas, conteúdos e planejamento de pautas.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="row" id="diferencial">
+    <h2>Meu diferencial</h2>
+    <div>
+      <p class="lead">Consigo unir estratégia, criatividade e execução na mesma comunicação.</p>
+      <p>Minha rotina passa pelo corporativo, pelos eventos, pela moda e pela criação de conteúdo. Isso me deixa adaptável, boa em ler tendências e em construir relacionamento com o público, e me permite enxergar um projeto de forma estratégica, criativa e operacional ao mesmo tempo.</p>
+    </div>
+  </section>
+
+  <section class="row" id="experiencia">
+    <h2>Experiência complementar</h2>
+    <div>
+      <p>Minha passagem por funções administrativas e financeiras desenvolveu organização, acompanhamento de prazos, comunicação com diferentes pessoas e atenção aos detalhes. Levo essas habilidades para o relacionamento com marcas, a gestão de entregas e a produção de ações.</p>
+    </div>
+  </section>
+
+  <section class="row" id="formacao">
+    <h2>Formação</h2>
+    <div>
+      <ul class="list">
+        <li>Graduação em Publicidade, Propaganda e Mídias Digitais (em andamento)</li>
+        <li>Técnico em Administração</li>
+        <li>Curso de Liderança e Desenvolvimento de Equipes</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="row" id="ideias">
+    <h2>Ideias de conteúdo</h2>
+    <div>
+      <p>Alguns formatos que posso criar para a sua marca ou evento:</p>
+      <ul class="tags">
+        <li>Fashion e streetstyle</li><li>Cobertura de eventos</li><li>Trends e transições</li><li>Storytelling de rotina</li><li>Corporativo + criativo</li><li>Produções editoriais</li><li>Bastidores</li><li>Conteúdo casual e orgânico</li><li>Conteúdo de comportamento</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="row" id="contato">
+    <h2>Vamos conversar</h2>
+    <div>
+      <p class="quote">Entre o corporativo e o criativo, encontrei minha forma de comunicar.</p>
+      <p class="muted">Quero desenvolver projetos, campanhas e parcerias que façam sentido de verdade, conectando estética, estratégia e autenticidade.</p>
+      <div class="contact">
+        <strong>Bia Nogueira</strong>
+        <span>Instagram: <a href="https://instagram.com/bianogueirag" target="_blank" rel="noopener">@bianogueirag</a></span>
+        <span>Lube Club: <a href="https://instagram.com/lube.club" target="_blank" rel="noopener">@lube.club</a></span>
+        <span>E-mail: <a href="mailto:biangarcia@hotmail.com">biangarcia@hotmail.com</a></span>
+        <span>WhatsApp: <a href="https://wa.me/5527999458752" target="_blank" rel="noopener">(27) 99945-8752</a></span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Obrigada pelo carinho e pela atenção. ✨</div></footer>
+
+<script>
+(function(){
+  var notes={
+    corporativo:"Organização, cronogramas, gestão de projetos e comunicação estratégica.",
+    criativo:"Estética, tendências, storytelling e conteúdo com cara de vivência."
+  };
+  var root=document.documentElement,note=document.getElementById("note");
+  var btns=document.querySelectorAll(".seg button");
+  function set(m){
+    root.setAttribute("data-mode",m);
+    btns.forEach(function(b){b.setAttribute("aria-pressed",String(b.dataset.set===m))});
+    note.textContent=notes[m];
+  }
+  btns.forEach(function(b){b.addEventListener("click",function(){set(b.dataset.set)})});
+  set("criativo");
+})();
+</script>
+</body>
+</html>
